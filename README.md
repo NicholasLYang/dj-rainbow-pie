@@ -1,3 +1,3 @@
 # dj-rainbow-pie
 
-LED music visualizer
+LED music visualizer. It's cool
