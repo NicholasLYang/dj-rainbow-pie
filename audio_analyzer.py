@@ -16,8 +16,10 @@ def read_mp3(file_name):
         if tuning > max:
             max = tuning
         scaled_tuning = ((tuning + 1) * 255) % 255
+        rgb_color = color_wheel(scaled_tuning)
+        print rgb_color
         current_time = current_time + sample_size
-    print max
+
 
 def scale_pitch(pitch):
     return color_wheel(pitch)

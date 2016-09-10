@@ -7,7 +7,7 @@ from flask import (Flask,
                    redirect,
                    url_for,
                    send_from_directory)
-from werkzeug.utils import secure_filename
+import audio_analyzer
 
 
 app = Flask(__name__)
@@ -25,9 +25,11 @@ def index():
     return render_template('index.html',
                            mp3s=mp3s)
 
-@app.route('/get_mp3/<file_name>')
-def get_mp3(file_name):
-    return send_from_directory(MP3_PATH, file_name)
+@app.route('/read_mp3/<file_name>')
+def read_mp3(file_name):
+    file_path = os.path.join(MP3_PATH, file_name)
+    audio_analyzer.read_mp3(file_path)
+    return redirect(url_for('index'))
 
 @app.route('/upload', methods = ['GET', 'POST'])
 def upload():
