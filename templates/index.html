@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <h1> Welcome to DJ RAINBOW'S WEBSITE <h1>
+        <ul>
+          {% for mp3 in mp3s %}
+          <li> <a href='/get_mp3/{{mp3[0]}}'> {{mp3[1]}} </a>
+            {% endfor %} 
+        </ul>
+  </body>
+</html>
+    
