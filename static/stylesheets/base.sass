@@ -1,0 +1,20 @@
+@import compass
+
+$stripe-width:  100% / 8
+
+$stripe-1: #c00
+$stripe-2: #f90
+$stripe-3: #ff6
+$stripe-4: #693
+$stripe-5: #3cc
+$stripe-6: #09c
+$stripe-7: #33c
+$stripe-8: #96c
+
+=rainbow
+  +background-image(linear-gradient(left, $stripe-1, $stripe-1 $stripe-width, $stripe-2 $stripe-width, $stripe-2 $stripe-width * 2, $stripe-3 $stripe-width * 2, $stripe-3 $stripe-width * 3, $stripe-4 $stripe-width * 3, $stripe-4 $stripe-width * 4, $stripe-5 $stripe-width * 4, $stripe-5 $stripe-width * 5, $stripe-6 $stripe-width * 5, $stripe-6 $stripe-width * 6, $stripe-7 $stripe-width * 6, $stripe-7 $stripe-width * 7, $stripe-8 $stripe-width * 7, $stripe-8))
+
+.my-rainbow
+  height: 1em
+  +rainbow
+  +box-shadow(0 1px 2px rgba(#000, .25) inset)

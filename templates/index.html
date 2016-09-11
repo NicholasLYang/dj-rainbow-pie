@@ -1,16 +1,39 @@
 {% extends "base.html" %}
 {% block head %}
-<title> Welcome to DJ RAINBOW'S WEBSITE </title>
+
 {% endblock %}
 
 {% block contents %}
 
-<h1 class="title"> Songs </h1>
+<div class="subtitle">
+  <h2> Play A Song! </h1>
+</div>
 
-<ul>
-  {% for mp3 in mp3s %}
-  <li> <a href='/read_mp3/{{mp3[0]}}'> {{mp3[1]}} </a>
+
+<ul class="list-group">
+  {% for song in songs %}
+  <li class="list-group-item">
+    <a class="song-link" href='/read_mp3/{{song[0]}}'>
+      <h4>
+        <span class="album-cover">
+          <img  src="/static/albums/{{song[2]}}">
+        </span>
+        <span class="song-link">
+          {{song[1]}}
+        </span>
+      </h4>
+    </a>
+    <span class="delete-link">
+      <a href="/delete_song/{{song[0]}}">
+        Delete
+      </a>
+    </span>
+
+
     {% endfor %} 
 </ul>
+
+<a href="/upload"> <h2> Or add your own </h2> </a>
+
 {% endblock %}
     
