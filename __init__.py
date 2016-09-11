@@ -8,13 +8,16 @@ from flask import (Flask,
                    url_for,
                    send_from_directory)
 import audio_analyzer
-
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+Bootstrap(app)
 
 FLASK_PATH = os.path.dirname(__file__)
 MP3_PATH = os.path.join(FLASK_PATH, 'mp3s')
 TEMPLATES_PATH = os.path.join(FLASK_PATH, 'templates')
+
+
 
 @app.route('/')
 @app.route('/index')
